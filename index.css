@@ -1,0 +1,601 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html{
+  overflow-x: hidden;
+}
+
+body{
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    min-height: 2000px;
+    background-image: url(img/pd.jpg);
+    background-size: cover;              
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.mynavbar {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.navbar-brand {
+    margin-left: -40px;
+}
+
+.beranda {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  /* background-color: #89CFF3; */
+}
+
+/* --- FLEX WRAPPER --- */
+.beranda-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  padding-left: 10px;
+}
+
+/* --- KIRI (TEKS) --- */
+.beranda-text {
+  flex: 1;
+  text-align: left;
+  z-index: 2;
+}
+
+.beranda-text span {
+  font-size: 16px;
+}
+
+.beranda-text h1 {
+  font-weight: 600;
+  color: #fff;
+}
+
+.beranda-text h3 {
+  font-weight: 700;
+  color: #fff;
+}
+
+.beranda-text p {
+  margin-top: 13px;
+  line-height: 1.6;
+}
+
+.foto-wrapper {
+  position: relative;
+  width: 350px;  
+  height: 300px;
+  right: 40px;
+}
+
+/* kotak biru di belakang foto */
+.foto-bg {
+  position: absolute;
+  top: -20px;        
+  right: -20px;      
+  width: 350px;
+  height: 100%;
+  background: #38bdf8;
+  border-radius: 0 0 0 60px;
+  z-index: 1;
+}
+
+/* foto di depan */
+.foto-wrapper img {
+  position: relative;
+  width: 350px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 0 0 60px; 
+  z-index: 2;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.beranda, .keterampilan, .pendidikan,
+.proyek, .kontak, footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  text-align: center;  
+  padding-top: 9rem;
+  padding-bottom: 8rem;
+}
+
+/* .keterampilan, .kontak {
+  background-image: url(img/fpb.jpg);
+ background-size: cover;              
+ background-position: center;
+ background-repeat: no-repeat;
+} */
+
+.pendidikan h2, .keterampilan h2, 
+.proyek h2, .kontak h2{
+    font-weight: 600;
+    position: relative;
+    display: block;
+    color: #00A9FF;
+}
+
+/* h2::after{
+  content: "";
+  display: block;
+  width: 50px;           
+  height: 4px;           
+  background: #A0E9FF;   
+  margin: 8px auto 0;   
+  border-radius: 2px;
+} */
+
+.keterampilan p, .pendidikan p, 
+.proyek p, .kontak p{
+    color:#38bdf8;
+}
+
+.keterampilan-container, .kontak-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 70px;
+  margin: auto;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+
+.keterampilan-card {
+  background: #38bdf8;
+  padding: 40px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  width: 210px;
+  height: 200px;
+}
+
+.keterampilan-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 32px;
+  color: #fff;
+}
+    
+.icon i{
+  width: 80px;
+  height: 80px;
+  font-size: 60px;
+  color: #fff;
+  display: flex;           
+  align-items: center;        
+  justify-content: center;
+}
+    
+.keterampilan-card p {
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+
+.garis {
+  position: relative;
+  max-width: 700px;
+  margin-top: 50px;
+  padding-left: 20px;
+  border-left: 3px solid #38bdf8;
+  left: 20%;
+}
+
+.garis-item {
+  position: relative;
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 20px ;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+  padding: 20px 25px;                   
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.garis-dot {
+  position: absolute;
+  left: -30px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px #007bff33;
+}
+
+.garis-content {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.garis-content .year {
+  color: #38bdf8;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.garis-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.garis-content p {
+  margin-top: 4px;
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: #89CFF3; 
+      transform: translateX(-50%);
+    }
+
+    /* ===== ITEM TIMELINE ===== */
+    .timeline-item {
+      position: relative;
+      display: table;
+      justify-content: space-between;
+      align-items: center;
+      margin: 4rem 0;
+    }
+
+    /* ===== PANEL (KARTU) ===== */
+    .timeline-panel {
+      position: relative;
+      width: 40%;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .timeline-panel h4 {
+      color: #00A9FF;
+    }
+
+    .timeline-panel p{
+      color: black;
+    }
+
+   .timeline-panel button{
+      margin-top: 15px;
+      border-radius: 50px;
+      background-color: #00A9FF;
+      border:1px solid #00A9FF;
+    }
+
+    .timeline-panel a{
+      text-decoration: none;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .timeline-panel button:hover{
+      background-color: #38bdf8;
+      border: 1px solid #38bdf8;
+    }
+
+    /* SEGITIGA KIRI */
+    /* .timeline-item.left .timeline-panel::after {
+      content: "";
+      position: absolute;
+      top: 40px;
+      right: -10px;
+      border: 10px solid transparent;
+      border-left-color: #fff;
+    } */
+
+    /* SEGITIGA KANAN */
+    /* .timeline-item.right .timeline-panel::after {
+      content: "";
+      position: absolute;
+      top: 40px;
+      left: -10px;
+      border: 10px solid transparent;
+      border-right-color: #fff;
+    } */
+
+    /* ===== LINGKARAN FOTO DI TENGAH GARIS ===== */
+    .timeline-image {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #eee;
+      border: 5px solid #fff;
+      box-shadow: 0 0 0 2px #89CFF3;
+      z-index: 10;
+      margin-left: 10px;
+    }
+
+    .timeline-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* POSISI ITEM KIRI / KANAN */
+    .timeline-item.left .timeline-panel {
+      float: left;
+      margin-left: 20px;
+    }
+
+    .timeline-item.right .timeline-panel {
+      float: right;
+      margin-left: 200px;
+    }
+
+  .kontak-container {
+  gap: 1.5rem;        
+}
+
+  .card {
+  background-color: #89CFF3;   
+  border: none;               
+  border-radius: 15px;         
+  text-align: center;
+  overflow: hidden;            
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card .list-group-item {
+  background-color: #89CFF3;
+  border-color: #fff;  
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card .list-group-item i {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.portfolio-footer {
+  background: #89CFF3; 
+  color: #e2e8f0;
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+ 
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 4rem;
+  padding: 0.5rem 0;
+}
+
+/* Navigasi Kiri */
+.footer-nav {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: flex-end;
+  gap: 1rem;
+}
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover, .navbar-nav a:hover {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* Brand Kanan */
+.footer-brand img {
+  height: 80px; 
+  width: auto;
+  object-fit: contain;
+  margin-left: -40px;
+}
+
+/* Divider */
+.footer-divider {
+  width: 90%;
+  height: 1px;
+  background: #fff;
+  margin: 1rem auto 2rem;
+}
+
+/* Copyright Text */
+.footer-copy {
+  font-size: 0.85rem;
+  color: #fff;
+  margin-top: 0.5rem;
+}
+
+
+
+@media (max-width: 992px) {
+  .beranda-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .beranda-text {
+    text-align: center;
+  }
+
+  .foto-wrapper {
+    right: 0;
+    width: 280px;
+    height: 250px;
+  }
+
+  .keterampilan-container, .kontak-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline::before {
+   display: none;
+  }
+
+   .timeline-item {
+    display: flex;
+    justify-content: center; /* semua panel di tengah */
+  }
+  
+  .timeline-item.left .timeline-panel,
+  .timeline-item.right .timeline-panel {
+    float: none;
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  .timeline-image {
+    display: none;
+  }
+
+  .footer-top {
+    flex-direction: column;       /* brand di atas, nav di bawah */
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-nav {
+    flex-direction: row;          /* nav tetap horizontal tapi di bawah brand */
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    width: 100%;
+  }
+
+  .footer-brand img {
+    margin: 0 auto;
+    height: 80px;
+  }
+}
+
+/* --- HP (<=576px) --- */
+@media (max-width: 576px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .beranda {
+    padding: 3rem 1.5rem;
+  }
+
+  .foto-wrapper {
+    width: 220px;
+    height: 200px;
+  }
+
+  .keterampilan-container,  .kontak-container {
+    grid-template-columns: 1fr;
+  }
+
+ .garis {
+    border-left: none;       /* hilangkan garis */
+    left: 0;
+    padding-left: 0;
+    margin: 30px auto;
+    max-width: 90%;          /* biar agak lebar di tengah */
+  }
+
+  .garis-item {
+    background: #fff;         /* opsional, biar seperti card */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .garis-dot {
+    display: none;           /* hilangkan titik */
+  }
+
+  .garis-content {
+    padding: 0;
+    text-align: left;
+  }
+
+  .garis-content h3,
+  .garis-content p {
+    text-align: left;
+  }
+
+  .timeline::before {
+   display: none;
+  }
+
+ .footer-top {
+    flex-direction: column;       /* brand dan nav jadi vertikal */
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-nav {
+    flex-direction: column;       /* menu menurun ke bawah */
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .footer-brand img {
+    margin: 0 auto;
+    height: 70px;
+  }
+}
